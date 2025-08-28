@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 2%;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.contenedor_todo {
+  width: 65%;
+  margin: auto;
+  padding: 2%;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.sub_contenedor {
+  margin-bottom: 30px;
+}
+
+.sub_contenedor h2 {
+  /*border-bottom: 2px solid #444; para resaltar partes del libro*/
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+/* Estilo basico para lista de datos */
+.parte_izquierda ul {
+  list-style: none;
+  padding: 0;
+}
+
+.parte_izquierda ul li {
+  margin: 5px;
+  margin-right: 3%;
+}
+
+/* Responsivo para que no se deforme al cambiar el tamaño de la pagina web uwu */
+@media (min-width: 768px) {
+  .flex {
+    display: flex;
+    gap: 1%;
+  }
+  .parte_izquierda, .ordenar_parte {
+    flex: 1;
+  }
+}
+
+/* Sección de botones */
+.seccion_de_botones {
+  text-align: center;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;       /* permite que los botones bajen de línea al cambiar el tamaño de la pagina */
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.botones button {
+  flex: 1 1 120px;       /* crece y encoge, mínimo 120px */
+  max-width: 200px;      /* no crecer más de 200px */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;   /* bordes redondeados para un diseño mas bonis*/
+  background-color: #616161;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botones button:hover {
+  background-color: #288fe3ce;
+}
+
+/* Responsivo*/
+@media (max-width: 600px) {
+  .botones {
+    flex-direction: column; /* los botones se apilan */
+    align-items: stretch;
+  }
+  
+  .botones button {
+    max-width: none;       /* ocupan todo el ancho */
+    width: 100%;
+  }
+}
