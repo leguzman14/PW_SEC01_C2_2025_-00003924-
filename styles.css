@@ -1,102 +1,108 @@
+/* Reglas basicas de la pagina */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  font-family: Arial, sans-serif;
+  /* codigo para ver de igual forma el texto sin importar el sistema operativo*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Contenedor de la pagina */
+.pagina {
+  max-width: 1360px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Header barra de colorr verde */
+.barra {
+  background: #4CAF50;
+  color: #fff;
+  padding: 36px 24px 30px;
+  border-radius: 4px;
+}
+.barra h1 {
+  margin: 0 0 10px 0;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.barra p {
   margin: 0;
-  padding: 2%;
-  background-color: #f9f9f9;
-  color: #333;
+  font-size: 22px;
 }
 
-.contenedor_todo {
-  width: 65%;
-  margin: auto;
-  padding: 2%;
-  background: rgb(255, 255, 255);
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
+/* Cuadrícula datos/contenido */
+.cuadricula {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  padding: 28px 24px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.carta h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 16px 0 12px;
+}
+.carta p {
+  margin: 12px 0;
+  font-size: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-header h1 {
-  font-size: 2em;
-  margin: 0;
-}
-
-.sub_contenedor {
-  margin-bottom: 30px;
-}
-
-.sub_contenedor h2 {
-  /*border-bottom: 2px solid #444; para resaltar partes del libro*/
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  font-size: 1.4em;
-}
-
-/* Estilo basico para lista de datos */
-.parte_izquierda ul {
-  list-style: none;
-  padding: 0;
-}
-
-.parte_izquierda ul li {
-  margin: 5px;
-  margin-right: 3%;
-}
-
-/* Responsivo para que no se deforme al cambiar el tamaño de la pagina web uwu */
-@media (min-width: 768px) {
-  .flex {
-    display: flex;
-    gap: 1%;
-  }
-  .parte_izquierda, .ordenar_parte {
-    flex: 1;
-  }
-}
-
-/* Sección de botones */
-.seccion_de_botones {
+/* Footer color */
+.pie {
+  background: #2196F3;
+  color: #fff;
+  padding: 28px 24px 34px;
+  border-radius: 4px;
+  margin-top: 24px;
   text-align: center;
 }
+.pie h3 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+.pie p {
+  margin: 0 0 20px 0;
+  font-size: 22px;
+}
 
-.botones {
+/* Footer botones */
+.footer-botones {
   display: flex;
-  flex-wrap: wrap;       /* permite que los botones bajen de línea al cambiar el tamaño de la pagina */
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
-
-.botones button {
-  flex: 1 1 120px;       /* crece y encoge, mínimo 120px */
-  max-width: 200px;      /* no crecer más de 200px */
-  padding: 12px 20px;
+.footer-botones button {
+  background: #ffffff;
+  color: #2196F3;
   border: none;
-  border-radius: 25px;   /* bordes redondeados para un diseño mas bonis*/
-  background-color: #616161;
-  color: white;
-  font-size: 1em;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+}
+.footer-botones button:hover {
+  background: #1976d2;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-.botones button:hover {
-  background-color: #288fe3ce;
-}
-
-/* Responsivo*/
-@media (max-width: 600px) {
-  .botones {
-    flex-direction: column; /* los botones se apilan */
-    align-items: stretch;
-  }
-  
-  .botones button {
-    max-width: none;       /* ocupan todo el ancho */
-    width: 100%;
-  }
+/* Adaptativo */
+@media (max-width: 1024px) {
+  .barra h1 { font-size: 44px; }
+  .cuadricula { grid-template-columns: 1fr; gap: 22px; }
+  .carta h2 { font-size: 36px; }
+  .carta p { font-size: 18px; }
+  .pie h3 { font-size: 38px; }
+  .pie p { font-size: 20px; }
 }
